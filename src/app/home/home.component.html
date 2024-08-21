@@ -1,18 +1,4 @@
-<!-- <div class="main">
-  <h1>Welcome to Books club!</h1>
-  <h4>
-    This app is designed to help you keep track of all the books you've read,
-    are currently reading, and plan to read in the future.
-  </h4>
-  <h4>
-    Whether you're a casual reader or a dedicated bibliophile, "My Book Club"
-    offers an intuitive and seamless experience to manage your literary journey.
-  </h4>
-  <button mat-raised-button color="primary" (click)="startread()">
-    Start Reading
-  </button>
-</div> -->
-
+<!-- 
 <div class="app-container">
   <header class="app-header">
     <h1>Welcome to My Book Club!</h1>
@@ -24,10 +10,74 @@
       Whether you're a casual reader or a dedicated bibliophile, "My Book Club"
       offers an intuitive and seamless experience to manage your literary
       journey.
+    </p> -->
+<!-- <button class="start-button" onclick="startread()">Start Reading</button> -->
+<!-- <button class="start-button" color="primary" (click)="startread()">
+      Start Reading
+    </button>
+  </header>
+</div> -->
+<div class="app-container">
+  <header class="app-header">
+    <h1>Welcome to Book Club!</h1>
+    <p class="subtitle">
+      Keep track of all the books you've read, are currently reading, and plan
+      to read in the future.
     </p>
-    <!-- <button class="start-button" onclick="startread()">Start Reading</button> -->
+    <p class="description">
+      Whether you're a casual reader or a dedicated bibliophile, "My Book Club"
+      offers an intuitive and seamless experience to manage your literary
+      journey.
+    </p>
     <button class="start-button" color="primary" (click)="startread()">
       Start Reading
     </button>
   </header>
+
+  <section class="featured-books">
+    <h2>Most liked Books</h2>
+    <div class="book-list">
+      <div class="book-card">
+        <img
+          src="https://cdn.shopify.com/s/files/1/0070/1884/0133/t/8/assets/pf-71b40b91--Books_1200x.jpg?v=1620061288"
+          alt="Book Title 1"
+        />
+        <h3>The Origin of Species</h3>
+        <p>Author: Charles Darwin</p>
+        <p>Genre: Fiction</p>
+      </div>
+      <div class="book-card">
+        <img
+          src="https://d1whtlypfis84e.cloudfront.net/guides/wp-content/uploads/2018/05/21035708/51QSrQDru9L._SX342_BO1204203200_-207x300.jpg"
+          alt="Book Title 2"
+        />
+        <h3>Wings of Fire</h3>
+        <p>Author: Dr. A. P. J. Abdul Kalam</p>
+        <p>Genre: Autobiography</p>
+      </div>
+      <div class="book-card">
+        <img
+          src="https://5.imimg.com/data5/ANDROID/Default/2023/4/300895448/RB/VS/NN/139116043/product-jpeg-500x500.jpg"
+          alt="Book Title 3"
+        />
+        <h3>It Ends With Us</h3>
+        <p>Author: Colleen Hoover</p>
+        <p>Genre: Romance</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="categories">
+    <h2>Browse by Category</h2>
+    <div class="category-list">
+      <a href="/category/fiction" class="category-card">Fiction</a>
+      <a href="/category/non-fiction" class="category-card">Non-Fiction</a>
+      <a href="/category/mystery" class="category-card">Mystery</a>
+      <a href="/category/science-fiction" class="category-card"
+        >Science Fiction</a
+      >
+      <a href="/category/fantasy" class="category-card">Fantasy</a>
+      <!-- Add more categories as needed -->
+    </div>
+  </section>
 </div>

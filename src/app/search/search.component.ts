@@ -84,9 +84,22 @@ export class SearchComponent {
   //   );
   // }
 
-  deletebook(book_to_be_deleted: Book) {
+  // deletebookP(book_to_be_deleted: Book) {
+  //   this.booksservice
+  //     .delete_the_book(book_to_be_deleted)
+  //     .then(() => this.loadBooks());
+  // }
+
+  deletebookP(book_to_be_deleted: Book) {
+    console.log('Attempting to delete book:', book_to_be_deleted);
     this.booksservice
       .delete_the_book(book_to_be_deleted)
-      .then(() => this.loadBooks());
+      .then(() => {
+        console.log('Book deleted successfully');
+        this.loadBooks();
+      })
+      .catch((error) => {
+        console.error('Error deleting book:', error);
+      });
   }
 }

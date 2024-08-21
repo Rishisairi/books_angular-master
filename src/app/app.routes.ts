@@ -5,7 +5,7 @@ import { EditBooksComponent } from './edit-books/edit-books.component';
 import { AddbooksComponent } from './addbooks/addbooks.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { BookdetailsComponent } from './bookdetails/bookdetails.component';
-import { LoginPageComponent } from './login-page/login.component';
+import { LoginPageComponent } from './login/login.component';
 import { RegisterPageComponent } from './register-page/register-page.component';
 
 export const routes: Routes = [
@@ -26,7 +26,7 @@ export const routes: Routes = [
     component: SearchComponent,
   },
   {
-    path: 'search/:id',
+    path: 'search/:bookId',
     component: BookdetailsComponent,
   },
   {

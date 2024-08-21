@@ -4,7 +4,7 @@ import { AllbooksComponent } from './allbooks/allbooks.component';
 import { CommonModule } from '@angular/common';
 
 export interface Book {
-  bookId: string;
+  bookId: number;
   title: string;
   author: string;
   category: string;

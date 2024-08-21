@@ -20,7 +20,7 @@
   @for(books of filteredBooks; track $index) {
   <app-allbooks
     [everybook]="books"
-    (delete_the_book)="deletebook($event)"
+    (delete_the_book)="deletebookP($event)"
     [id]="books.id"
   />
   }
