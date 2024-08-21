@@ -1,0 +1,76 @@
+<!-- <p>addbooks works!</p> -->
+<!-- <p>add-recipe works!</p> -->
+<form [formGroup]="bookForm" (ngSubmit)="addbooks()" class="add-recipe-form">
+  <mat-form-field>
+    <input matInput type="text" formControlName="image" placeholder="Image" />
+    @if(posterUrl?.touched && posterUrl?.hasError('required') ){
+    <mat-error>posterUrl is <strong>required</strong></mat-error>
+    } @if(posterUrl?.touched && posterUrl?.hasError('minlength') ){
+    <mat-error>Please provide full movie posterUrl 😁</mat-error>
+    }@if(posterUrl?.touched && posterUrl?.hasError('pattern') ){
+    <mat-error>Please start with <strong>https://</strong> 🧑‍🚀 </mat-error>
+    }
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput type="text" formControlName="title" placeholder="Title" />
+    @if(title?.touched && title?.hasError('required') ){
+    <mat-error>title is <strong>required</strong></mat-error>
+    } @if(title?.touched && title?.hasError('minlength') ){
+    <mat-error>Please provide full movie name 😁</mat-error>
+    }
+  </mat-form-field>
+  <!-- <label id="example-radio-group-label">Select Category</label>
+  <mat-radio-group aria-label="Select category" formControlName="category">
+    <mat-radio-button value="veg">Veg</mat-radio-button>
+    <mat-radio-button value="non-veg">Non-veg</mat-radio-button>
+  </mat-radio-group> -->
+  <br />
+  <mat-form-field>
+    <input matInput type="text" formControlName="rating" placeholder="rating" />
+    @if(rating?.touched && rating?.hasError('required') ){
+    <mat-error>Rating is <strong>required</strong></mat-error>
+    } @if(rating?.touched && rating?.hasError('min') ){
+    <mat-error>Rating is <strong>too low 🥲</strong></mat-error>
+    } @if(rating?.touched && rating?.hasError('max') ){
+    <mat-error>Rating is too high 😓</mat-error>
+    }
+  </mat-form-field>
+  <!-- Author Field -->
+  <mat-form-field appearance="fill">
+    <mat-label>Author</mat-label>
+    <input matInput formControlName="author" placeholder="Author" />
+  </mat-form-field>
+
+  <!-- Category Field -->
+  <mat-form-field appearance="fill">
+    <mat-label>Category</mat-label>
+    <input matInput formControlName="category" placeholder="Category" />
+  </mat-form-field>
+
+  <!-- Publication Date Field -->
+  <mat-form-field appearance="fill">
+    <mat-label>Publication Date</mat-label>
+    <input
+      matInput
+      formControlName="publicationDate"
+      placeholder="25-03-2024"
+    />
+  </mat-form-field>
+
+  <br />
+
+  <!-- Status Field -->
+  <mat-form-field appearance="fill">
+    <mat-label>Status</mat-label>
+    <input
+      matInput
+      formControlName="status"
+      placeholder="Have read/reading/completed"
+    />
+  </mat-form-field>
+
+  <br />
+
+  <button mat-raised-button type="submit">{{ "addbook" }}</button>
+</form>

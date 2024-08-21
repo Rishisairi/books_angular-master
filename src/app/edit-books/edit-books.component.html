@@ -1,0 +1,180 @@
+<!-- <p>edit-books works!</p>
+<form [formGroup]="bookForm" (ngSubmit)="editbook()" class="edit-recipe-form">
+  <mat-form-field>
+    <mat-form-field>
+      <input matInput type="text" formControlName="title" placeholder="Title" />
+      @if(title?.touched && title?.hasError('required') ){
+      <mat-error>title is <strong>required</strong></mat-error>
+      } @if(title?.touched && title?.hasError('minlength') ){
+      <mat-error>Please provide full recipe name 😁</mat-error>
+      }
+    </mat-form-field>
+
+    <br />
+
+    <input matInput type="text" formControlName="image" placeholder="Image" />
+    @if(image?.touched && image?.hasError('required') ){
+    <mat-error>image is <strong>required</strong></mat-error>
+    } @if(image?.touched && image?.hasError('minlength') ){
+    <mat-error>Please provide full movie image 😁</mat-error>
+    }@if(image?.touched && image?.hasError('pattern') ){
+    <mat-error>Please start with <strong>https://</strong> 🧑‍🚀 </mat-error>
+    } </mat-form-field
+  ><br />
+
+  <mat-form-field>
+    <input matInput type="text" formControlName="rating" placeholder="rating" />
+    @if(rating?.touched && rating?.hasError('required') ){
+    <mat-error>Rating is <strong>required</strong></mat-error>
+    } @if(rating?.touched && rating?.hasError('min') ){
+    <mat-error>Rating is <strong>too low 🥲</strong></mat-error>
+    } @if(rating?.touched && rating?.hasError('max') ){
+    <mat-error>Rating is too high 😓</mat-error>
+    } </mat-form-field
+  ><br />
+  <mat-form-field>
+    <input
+      matInput
+      type="text"
+      formControlName="author"
+      placeholder="Author"
+    /> </mat-form-field
+  ><br />
+  <mat-form-field>
+    <textarea
+      matInput
+      type="text"
+      formControlName="category"
+      placeholder="category"
+    ></textarea></mat-form-field
+  ><br />
+  <mat-form-field>
+    <input
+      matInput
+      type="text"
+      formControlName="publicationDate"
+      placeholder="25-03-2024"
+    /> </mat-form-field
+  ><br />
+  <mat-form-field>
+    <textarea
+      matInput
+      type="text"
+      formControlName="status"
+      placeholder="have read/reading/completed"
+    ></textarea></mat-form-field
+  ><br /> -->
+
+<!-- <mat-form-field>
+    <mat-label>Cars</mat-label>
+    <mat-select formControlName="cuisines">
+      <mat-option value="volvo">Volvo</mat-option>
+      <mat-option value="saab">Saab</mat-option>
+      <mat-option value="mercedes">Mercedes</mat-option>
+      <mat-option value="audi">Audi</mat-option>
+    </mat-select>
+  </mat-form-field> -->
+
+<!-- <button mat-raised-button type="submit">{{ "Save" | uppercase }}</button>
+</form> -->
+<form [formGroup]="bookForm" (ngSubmit)="editbook()" class="edit-book-form">
+  <!-- Title Field -->
+  <mat-form-field appearance="fill">
+    <mat-label>Title</mat-label>
+    <input matInput formControlName="title" placeholder="Title" />
+    <mat-error *ngIf="title?.touched && title?.hasError('required')">
+      Title is <strong>required</strong>
+    </mat-error>
+    <mat-error *ngIf="title?.touched && title?.hasError('minlength')">
+      Please provide a complete title 😁
+    </mat-error>
+  </mat-form-field>
+
+  <br />
+
+  <!-- Image URL Field -->
+  <mat-form-field appearance="fill">
+    <mat-label>Image URL</mat-label>
+    <input matInput formControlName="image" placeholder="Image URL" />
+    <mat-error *ngIf="image?.touched && image?.hasError('required')">
+      Image URL is <strong>required</strong>
+    </mat-error>
+    <mat-error *ngIf="image?.touched && image?.hasError('minlength')">
+      Please provide a complete image URL 😁
+    </mat-error>
+    <mat-error *ngIf="image?.touched && image?.hasError('pattern')">
+      URL must start with <strong>https://</strong> 🧑‍🚀
+    </mat-error>
+  </mat-form-field>
+
+  <br />
+
+  <!-- Rating Field -->
+  <mat-form-field appearance="fill">
+    <mat-label>Rating</mat-label>
+    <input
+      matInput
+      type="number"
+      formControlName="rating"
+      placeholder="Rating"
+    />
+    <mat-error *ngIf="rating?.touched && rating?.hasError('required')">
+      Rating is <strong>required</strong>
+    </mat-error>
+    <mat-error *ngIf="rating?.touched && rating?.hasError('min')">
+      Rating is <strong>too low 🥲</strong>
+    </mat-error>
+    <mat-error *ngIf="rating?.touched && rating?.hasError('max')">
+      Rating is <strong>too high 😓</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <br />
+
+  <!-- Author Field -->
+  <mat-form-field appearance="fill">
+    <mat-label>Author</mat-label>
+    <input matInput formControlName="author" placeholder="Author" />
+  </mat-form-field>
+
+  <br />
+
+  <!-- Category Field -->
+  <mat-form-field appearance="fill">
+    <mat-label>Category</mat-label>
+    <textarea
+      matInput
+      formControlName="category"
+      placeholder="Category"
+    ></textarea>
+  </mat-form-field>
+
+  <br />
+
+  <!-- Publication Date Field -->
+  <mat-form-field appearance="fill">
+    <mat-label>Publication Date</mat-label>
+    <input
+      matInput
+      formControlName="publicationDate"
+      placeholder="25-03-2024"
+    />
+  </mat-form-field>
+
+  <br />
+
+  <!-- Status Field -->
+  <mat-form-field appearance="fill">
+    <mat-label>Status</mat-label>
+    <textarea
+      matInput
+      formControlName="status"
+      placeholder="Have read/reading/completed"
+    ></textarea>
+  </mat-form-field>
+
+  <br />
+
+  <!-- Submit Button -->
+  <button mat-raised-button type="submit">{{ "Save" | uppercase }}</button>
+</form>

@@ -1,0 +1,49 @@
+// .mainclass {
+//     padding-left: 15px;
+//     text-align: center;
+//     padding-top: 20px;
+//   }
+//   .all-books-container {
+//     display: flex;
+//     flex-wrap: wrap;
+//     gap: 2rem;
+//   }
+  
+/* Style for the search form */
+.search-form {
+  margin: 20px auto;
+  max-width: 600px;
+  text-align: center;
+}
+
+.search-input {
+  width: 100%;
+  max-width: 500px;
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  outline: none;
+}
+
+.search-input:focus {
+  border-color: #007bff;
+  box-shadow: 0 2px 6px rgba(0, 123, 255, 0.3);
+}
+
+/* Style for the books container */
+.all-books-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Additional styling for the container and books if needed */
+.mainclass {
+  padding-left: 15px;
+  text-align: center;
+  padding-top: 20px;
+}

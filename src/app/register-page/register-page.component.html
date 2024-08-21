@@ -1,0 +1,93 @@
+<form [formGroup]="registerForm" (ngSubmit)="register()" class="register-form">
+  <h1 style="text-align: center">Registration</h1>
+  <mat-form-field class="example-full-width">
+    <mat-label>Name</mat-label>
+    <input
+      matInput
+      type="text"
+      placeholder="Enter name"
+      formControlName="name"
+    />
+    @if(name?.touched && name?.hasError('required') ){
+    <mat-error>Name is <strong>required</strong></mat-error>
+    }
+  </mat-form-field>
+  <!-- <mat-form-field class="example-full-width">
+    <mat-label>Email</mat-label>
+    <input
+      matInput
+      type="email"
+      placeholder="Enter Email"
+      formControlName="email"
+    />
+    @if(email?.touched && email?.hasError('required') ) {
+    <mat-error>Email is <strong>required</strong></mat-error>
+    } @if(email?.touched && email?.hasError('email') ){
+    <mat-error> <strong>Invalid </strong> mail-id</mat-error>
+    }
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <mat-label>Phone Number</mat-label>
+    <input
+      matInput
+      type="text"
+      placeholder="Enter phonenumber "
+      formControlName="mobile"
+    />
+    @if(mobile?.touched && mobile?.hasError('required') ){
+    <mat-error>Phone number is <strong>required</strong></mat-error>
+    } @if(mobile?.touched && mobile?.hasError('maxlength') ){
+    <mat-error
+      >Phone number should not exceed <strong>10 characters </strong>
+    </mat-error>
+    }
+  </mat-form-field> -->
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Set Password</mat-label>
+    <input
+      matInput
+      type="text"
+      placeholder="Set Password "
+      formControlName="password"
+    />
+    @if(password?.touched && password?.hasError('required') ){
+    <mat-error>Password is <strong>required</strong></mat-error>
+    } @if(password?.touched && password?.hasError('maxlength') ){
+    <mat-error
+      >Password should not exceed <strong>16 characters </strong>
+    </mat-error>
+    } @if(password?.touched && password?.hasError('minlength') ){
+    <mat-error
+      >Password should be minimum of <strong>8 characters </strong>
+    </mat-error>
+    }
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Confirm Password</mat-label>
+    <input
+      matInput
+      type="text"
+      placeholder="confirm Password "
+      formControlName="cpassword"
+    />
+    @if(cpassword?.touched && cpassword?.hasError('required') ){
+    <mat-error>Confirmation of Password is <strong>required</strong></mat-error>
+    } @if(cpassword?.touched && cpassword?.hasError('maxlength') ){
+    <mat-error
+      >Password should not exceed <strong>16 characters </strong>
+    </mat-error>
+    } @if(cpassword?.touched && cpassword?.hasError('minlength') ){
+    <mat-error
+      >Password should be minimum of <strong>8 characters </strong>
+    </mat-error>
+    } @if(registerForm.hasError('passwordMismatch') ){
+    <mat-error
+      >Password should not exceed <strong>16 characters </strong>
+    </mat-error>
+    }
+  </mat-form-field>
+
+  <button mat-raised-button type="submit" color="primary">Sign In</button>
+</form>

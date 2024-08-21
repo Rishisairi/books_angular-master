@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <mat-card class="wholecontainer">
+      <div class="container">
+        <img src="{{ everybook.posterUrl }}" alt="Extraordinary" />
+        <div class="headingAndRating">
+          <h1>
+            {{ everybook.title }}
+          </h1>
+          <p class="rating">
+            {{ everybook.author }}
+          </p>
+        </div>
+        {{ everybook.publicationDate }}
+        <div class="cat_des_info">
+          <div class="cat_des">
+            <div class="category">
+              <p>
+                {{ everybook.category }}
+              </p>
+            </div>
+          </div>
+          <div class="info">
+            <button
+              mat-icon-button
+              class="details"
+              routerLink="/search/{{ id }}"
+            >
+              <mat-icon>info</mat-icon>
+            </button>
+
+            <button
+              mat-icon-button
+              aria-label="edit of bookeverybook"
+              routerLink="/search/edit/{{ id }}"
+            >
+              <mat-icon>edit</mat-icon>
+            </button>
+          </div>
+        </div>
+
+        <div class="delete-and-status">
+          <p>{{ everybook.status }}</p>
+          <mat-icon class="delete-button" color="warn" (click)="deletebook()"
+            >delete</mat-icon
+          >
+        </div>
+      </div>
+    </mat-card>
+  </body>
+</html>
